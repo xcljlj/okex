@@ -1,0 +1,1 @@
+open_basedir="F:\myjob\www\qkldemo2\;F:\UPUPW_NP7.2_64\Guard\;F:\UPUPW_NP7.2_64\phpmyadmin\;F:\UPUPW_NP7.2_64\temp\;C:\Windows\Temp\"

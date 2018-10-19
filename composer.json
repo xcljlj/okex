@@ -26,7 +26,8 @@
             "app/Libs"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "OkexV3\\" : "app/Libs/OkexV3/"
         }
     },
     "autoload-dev": {
