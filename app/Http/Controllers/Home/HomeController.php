@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class HomeController extends BaseController
 {
     /**
      * Create a new controller instance.
@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-//        $this->middleware('auth');
+        parent::__construct();
     }
 
     /**
@@ -22,9 +22,21 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
-        return 1111;
+        $userInfo = $request->session()->all();
+
+        return response()->json(['code'=>200,'msg'=>'','data'=>$userInfo]);
+    }
+    public function test(){
+        echo 1111;
+    }
+    /**
+     * 退出登录
+     */
+    public function signOut()
+    {
+        session()->flush();
+        return response()->json(['code' => 200, 'msg' => '退出成功', 'data' => []]);
     }
 }
